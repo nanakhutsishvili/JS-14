@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+    #circle {
+      width: 100px;
+      height: 100px;
+      background-color: blue;
+      border-radius: 50%;
+      position: relative;
+      transition: left 1s ease;
+    }
+  </style>
+</head>
+<body>
+  <button onclick="moveCircle()">Move Circle</button>
+  <div id="circle"></div>
+
+  <script>
+    function moveCircle() {
+      var circle = document.getElementById("circle");
+      circle.style.left = "0";
+      circle.style.transition = "left 5s ease";
+      circle.style.backgroundColor = "green";
+      setTimeout(function () {
+        circle.style.left = window.innerWidth - circle.offsetWidth + "px";
+      }, 100);
+    }
+  </script>
+</body>
+</html>
